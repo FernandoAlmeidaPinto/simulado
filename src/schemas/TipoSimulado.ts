@@ -36,7 +36,8 @@ const tipoSimuladoSchema = new Schema<ITipoSimulado>({
     caderno: {
       type: Number,
       required: false
-    }
+    },
+    _id: false
   }]
 }, {
   timestamps: true,

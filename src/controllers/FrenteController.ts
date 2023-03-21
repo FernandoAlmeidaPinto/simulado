@@ -4,7 +4,6 @@ import Frente from '../schemas/Frente'
 class FrenteController {
   public async getall (req: Request, res: Response): Promise<Response> {
     const frentes = await Frente.find()
-    console.log(typeof frentes)
     return res.json(frentes)
   }
 

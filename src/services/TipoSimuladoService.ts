@@ -12,6 +12,27 @@ class TipoSimuladoService implements IServiceBase<ITipoSimulado> {
 
     return tipoS
   }
+
+  public async getAll (): Promise<ITipoSimulado[]> {
+    return await TipoSimulado.find()
+  }
+
+  public async getById (id: string): Promise<ITipoSimulado | null> {
+    return await TipoSimulado
+      .findById(id)
+      .populate({
+        path: 'regras',
+        populate: {
+          path: 'materia', model: 'Materia'
+        }
+      })
+      .populate({
+        path: 'regras',
+        populate: {
+          path: 'frente', model: 'Frente'
+        }
+      })
+  }
 }
 
 export default new TipoSimuladoService()
