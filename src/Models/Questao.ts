@@ -1,17 +1,17 @@
-import { type Exame } from './Exame'
-import { type Frente } from './Frente'
-import { type Materia } from './Materia'
+import { type IExame } from './Exame'
+import { type IFrente } from './Frente'
+import { type IMateria } from './Materia'
 
-export interface Questao {
+export interface IQuestao extends Document {
   _id: string
-  exame: Exame
+  exame: IExame
   ano: number
   caderno: string
   enemArea: string
-  frente1: Frente
-  frente2: Frente
-  frente3: Frente
-  materia: Materia
+  frente1: IFrente
+  frente2: IFrente
+  frente3: IFrente
+  materia: IMateria
   numero: number
   textoQuestao: string
   textoAlternativaA: string

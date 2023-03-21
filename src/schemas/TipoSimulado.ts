@@ -1,11 +1,11 @@
 import mongoose from '../database/config'
-import { type TipoSimulado } from '../Models/Simulado'
+import { type ITipoSimulado } from '../Models/Simulado'
 import Frente from './Frente'
 import Materia from './Materia'
 
 const { Schema, model } = mongoose
 
-const tipoSimuladoSchema = new Schema<TipoSimulado>({
+const tipoSimuladoSchema = new Schema<ITipoSimulado>({
   nome: {
     type: String,
     required: true

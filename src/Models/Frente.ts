@@ -1,4 +1,4 @@
-export interface Frente {
+export interface IFrente extends Document {
   _id: string
   nome: string
 }

@@ -1,26 +1,26 @@
-import { type Frente } from './Frente'
-import { type Materia } from './Materia'
-import { type Questao } from './Questao'
+import { type IFrente } from './Frente'
+import { type IMateria } from './Materia'
+import { type IQuestao } from './Questao'
 
-export interface Regra {
-  materia: Materia
+export interface IRegra {
+  materia: IMateria
   quantidade: number
-  frente: Frente | null
+  frente: IFrente | null
   ano: number | null
   caderno: string | null
 }
 
-export interface TipoSimulado {
+export interface ITipoSimulado extends Document {
   nome: string
   quantidadeTotalQuestao: number
-  regras: Regra[]
+  regras: IRegra[]
 }
 
-export interface Simulado {
+export interface ISimulado extends Document {
   nome: string
   descricao: string
-  tipo: TipoSimulado
-  questao: Questao[]
+  tipo: ITipoSimulado
+  questao: IQuestao[]
   aproveitamento: number
   vezesRespondido: number
   bloqueado: boolean
